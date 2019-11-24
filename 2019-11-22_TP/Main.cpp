@@ -9,18 +9,24 @@ int main() {
 	Vecteur3D MonVecteur2(24, 13, -9);
 	MonVecteur2.AfficheVecteur();
 
+	std::cout << "Nombre de vecteur(s): " << Vecteur3D::nombre() << std::endl;
+
 	//Utilisation methode Normax
-	Vecteur3D::normaxValeur(MonVecteur, MonVecteur2);
+	Vecteur3D::normaxReference(MonVecteur, MonVecteur2);
+	std::cout << "Nombre de vecteur(s): " << Vecteur3D::nombre() << std::endl;
 
 	//Somme de deux vecteurs
 	std::cout << "La somme des deux vecteurs est:" << std::endl;
-	Vecteur3D::Somme(MonVecteur, MonVecteur2).AfficheVecteur();
+	Vecteur3D SommeVecteur(Vecteur3D::Somme(MonVecteur, MonVecteur2));
+	SommeVecteur.AfficheVecteur();
 
 	//Produit de deux vecteurs
 	std::cout << "Le produit scalaire des deux vecteurs est:" << std::endl;
-	Vecteur3D::produitScalaire(MonVecteur, MonVecteur2).AfficheVecteur();
+	Vecteur3D ProduitVecteur(Vecteur3D::produitScalaire(MonVecteur, MonVecteur2));
+	ProduitVecteur.AfficheVecteur();
 
-
+	//Affichage nombre d'objets
+	std::cout << "Nombre de vecteur(s): " << Vecteur3D::nombre() << std::endl;
 
 	system("pause");
 

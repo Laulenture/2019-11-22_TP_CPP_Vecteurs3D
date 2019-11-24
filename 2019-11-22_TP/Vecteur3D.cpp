@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <cmath>
 
+int Vecteur3D::nNombre = 0;
+
 ///Assesseurs
 float Vecteur3D::getX() {
 	return nX;
@@ -34,6 +36,7 @@ void Vecteur3D::Init(float nX, float nY, float nZ) {
 	this->nX = nX;
 	this->nY = nY;
 	this->nY = nZ;
+	nNombre++;
 }
 
 void Vecteur3D::AfficheVecteur() {
@@ -70,11 +73,9 @@ bool Vecteur3D::coincideReference(Vecteur3D &Vect) {
 Vecteur3D Vecteur3D::normaxValeur(Vecteur3D Vect1, Vecteur3D Vect2)
 {
 	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
-		std::cout << "La norme du premier vecteur est plus grande." << std::endl;
 		return Vect1;
 	}
 	else {
-		std::cout << "La norme du second vecteur est plus grande." << std::endl;
 		return Vect2;
 	}
 }
@@ -89,7 +90,7 @@ Vecteur3D Vecteur3D::normaxAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2)
 	}
 }
 
-Vecteur3D Vecteur3D::normaxReference(Vecteur3D & Vect1, Vecteur3D & Vect2)
+Vecteur3D Vecteur3D::normaxReference(Vecteur3D &Vect1, Vecteur3D &Vect2)
 {
 	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
 		return Vect1;
@@ -115,16 +116,18 @@ Vecteur3D Vecteur3D::produitScalaire(Vecteur3D &Vect1, Vecteur3D &Vect2)
 	return VectRes;
 }
 
-//Constructeurs
+int Vecteur3D::nombre()
+{
+	return nNombre;
+}
+
+///Constructeurs
 Vecteur3D::Vecteur3D() {
 	//std::cout << "Constructeur Vecteur 3D sans arguments" << std::endl;
 	this->nX = 0;
 	this->nY = 0;
 	this->nZ = 0;
-}
-
-Vecteur3D::~Vecteur3D() {
-	
+	nNombre++;
 }
 
 /*Vecteur3D::Vecteur3D(float nX, float nY, float nZ) {
@@ -132,4 +135,18 @@ Vecteur3D::~Vecteur3D() {
 	this->nX = nX;
 	this->nY = nY;
 	this->nZ = nZ;
+	nNombre++;
 }*/
+
+Vecteur3D::Vecteur3D(const Vecteur3D & Vect) {
+	nX = Vect.nX;
+	nY = Vect.nY;
+	nZ = Vect.nZ;
+}
+
+//Destructeur
+Vecteur3D::~Vecteur3D() {
+	//nNombre--;
+	///Il s'avère que le destructeur est appelé une fois dans toutes mes méthodes static, je ne comprend pas pourquoi et comment controuner le problème.
+	///Suis-je sensé éviter les fonctions static pour cete raision ou y a t-il un moyen d'éviter ça?
+}

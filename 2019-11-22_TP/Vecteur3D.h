@@ -8,6 +8,7 @@ class Vecteur3D {
 private:
 	///que dans la classe ell-même
 	float nX, nY, nZ;	//pour les 3 compostantes (cartésiennes)
+	static int nNombre;
 
 public:
 	///public est partout, dans la classe et à l'éxterieur
@@ -32,6 +33,7 @@ public:
 	static Vecteur3D normaxReference(Vecteur3D &Vect1, Vecteur3D &Vect2);
 	static Vecteur3D Somme(Vecteur3D &Vect1, Vecteur3D &Vect2);
 	static Vecteur3D produitScalaire(Vecteur3D &Vect1, Vecteur3D &Vect2);
+	static int nombre();
 
 	///constructeurs
 	Vecteur3D();
@@ -41,11 +43,15 @@ public:
 		this->nX = nX;
 		this->nY = nY;
 		this->nZ = nZ;
+		nNombre++;
 	}*/
 
 	Vecteur3D(float fltX, float fltY, float fltZ) {
-		nX = fltX; nY = fltY; nZ = fltZ;
+		nX = fltX; nY = fltY; nZ = fltZ; nNombre++;
 	}
+
+	///Constructeur de recopie
+	Vecteur3D(const Vecteur3D & Vect);
 
 	///desctructeur
 	~Vecteur3D();
