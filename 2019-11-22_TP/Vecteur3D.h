@@ -24,19 +24,20 @@ public:
 	///Methodes
 	void Init(float nX, float nY, float nZ);
 	void AfficheVecteur();
-	bool coincideValeur(Vecteur3D Vect);
-	bool coincideAdresse(Vecteur3D * Vect);
-	bool coincideReference(Vecteur3D &Vect);
 	
 
 	///constructeurs
 	Vecteur3D();
 	//Vecteur3D(float nX, float nY, float nZ);
 
-	inline Vecteur3D(float nX, float nY, float nZ) {
+	/*inline Vecteur3D(float nX, float nY, float nZ) {
 		this->nX = nX;
 		this->nY = nY;
 		this->nZ = nZ;
+	}*/
+
+	Vecteur3D(float fltX, float fltY, float fltZ) {
+		nX = fltX; nY = fltY; nZ = fltZ;
 	}
 
 	///desctructeur

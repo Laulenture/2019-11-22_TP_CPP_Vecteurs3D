@@ -41,33 +41,6 @@ void Vecteur3D::AfficheVecteur() {
 	std::cout << "Z: " << this->getZ() << std::endl;
 };
 
-bool Vecteur3D::coincideValeur(Vecteur3D Vect) {
-	if (this->nX == Vect.nX && this->nY == Vect.nY && this->nZ == Vect.nZ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
-bool Vecteur3D::coincideAdresse(Vecteur3D * Vect) {
-	if (this->nX == Vect->nX && this->nY == Vect->nY && this->nZ == Vect->nZ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
-bool Vecteur3D::coincideReference(Vecteur3D &Vect) {
-	if (this->nX == Vect.nX && this->nY == Vect.nY && this->nZ == Vect.nZ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
 //Constructeurs
 Vecteur3D::Vecteur3D() {
 	std::cout << "Constructeur Vecteur 3D avec arguments" << std::endl;
