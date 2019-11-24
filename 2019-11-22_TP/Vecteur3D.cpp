@@ -37,9 +37,7 @@ void Vecteur3D::Init(float nX, float nY, float nZ) {
 }
 
 void Vecteur3D::AfficheVecteur() {
-	std::cout << "X: " << this->getX() << std::endl;
-	std::cout << "Y: " << this->getY() << std::endl;
-	std::cout << "Z: " << this->getZ() << std::endl;
+	std::cout << "< " << this->getX() << ", " << this->getY() << ", " << this->getZ() << " >" << std::endl;
 };
 
 bool Vecteur3D::coincideValeur(Vecteur3D Vect) {
@@ -101,9 +99,25 @@ Vecteur3D Vecteur3D::normaxReference(Vecteur3D & Vect1, Vecteur3D & Vect2)
 	}
 }
 
+Vecteur3D Vecteur3D::Somme(Vecteur3D &Vect1, Vecteur3D &Vect2) {
+	Vecteur3D VectRes;
+	VectRes.nX = Vect1.nX + Vect2.nX;
+	VectRes.nY = Vect1.nY + Vect2.nY;
+	VectRes.nZ = Vect1.nZ + Vect2.nZ;
+	return VectRes;
+}
+Vecteur3D Vecteur3D::produitScalaire(Vecteur3D &Vect1, Vecteur3D &Vect2)
+{
+	Vecteur3D VectRes;
+	VectRes.nX = Vect1.nX * Vect2.nX;
+	VectRes.nY = Vect1.nY * Vect2.nY;
+	VectRes.nZ = Vect1.nZ * Vect2.nZ;
+	return VectRes;
+}
+
 //Constructeurs
 Vecteur3D::Vecteur3D() {
-	std::cout << "Constructeur Vecteur 3D avec arguments" << std::endl;
+	//std::cout << "Constructeur Vecteur 3D sans arguments" << std::endl;
 	this->nX = 0;
 	this->nY = 0;
 	this->nZ = 0;

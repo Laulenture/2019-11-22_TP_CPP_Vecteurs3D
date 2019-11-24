@@ -30,6 +30,8 @@ public:
 	static Vecteur3D normaxValeur(Vecteur3D Vect1, Vecteur3D Vect2);
 	static Vecteur3D normaxAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2);
 	static Vecteur3D normaxReference(Vecteur3D &Vect1, Vecteur3D &Vect2);
+	static Vecteur3D Somme(Vecteur3D &Vect1, Vecteur3D &Vect2);
+	static Vecteur3D produitScalaire(Vecteur3D &Vect1, Vecteur3D &Vect2);
 
 	///constructeurs
 	Vecteur3D();
