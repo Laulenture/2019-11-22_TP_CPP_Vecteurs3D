@@ -69,7 +69,7 @@ bool Vecteur3D::coincideReference(Vecteur3D &Vect) {
 	}
 }
 
-Vecteur3D Vecteur3D::normePlusGrandeValeur(Vecteur3D Vect1, Vecteur3D Vect2)
+Vecteur3D Vecteur3D::normaxValeur(Vecteur3D Vect1, Vecteur3D Vect2)
 {
 	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
 		std::cout << "La norme du premier vecteur est plus grande." << std::endl;
@@ -81,7 +81,7 @@ Vecteur3D Vecteur3D::normePlusGrandeValeur(Vecteur3D Vect1, Vecteur3D Vect2)
 	}
 }
 
-Vecteur3D Vecteur3D::normePlusGrandeAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2)
+Vecteur3D Vecteur3D::normaxAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2)
 {
 	if (sqrt(Vect1->nX*Vect1->nX + Vect1->nY*Vect1->nY + Vect1->nZ*Vect1->nZ) > sqrt(Vect2->nX*Vect2->nX + Vect2->nY*Vect2->nY + Vect2->nZ*Vect2->nZ)) {
 		return *Vect1;
@@ -91,7 +91,7 @@ Vecteur3D Vecteur3D::normePlusGrandeAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2
 	}
 }
 
-Vecteur3D Vecteur3D::normePlusGrandeReference(Vecteur3D & Vect1, Vecteur3D & Vect2)
+Vecteur3D Vecteur3D::normaxReference(Vecteur3D & Vect1, Vecteur3D & Vect2)
 {
 	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
 		return Vect1;

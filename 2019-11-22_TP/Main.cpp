@@ -9,7 +9,7 @@ int main() {
 	Vecteur3D MonVecteur2(24, 13, -9);
 	MonVecteur2.AfficheVecteur();
 
-	Vecteur3D::normePlusGrandeValeur(MonVecteur, MonVecteur2);
+	Vecteur3D::normaxValeur(MonVecteur, MonVecteur2);
 
 	system("pause");
 
