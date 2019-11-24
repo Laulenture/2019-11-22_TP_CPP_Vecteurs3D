@@ -24,7 +24,12 @@ public:
 	///Methodes
 	void Init(float nX, float nY, float nZ);
 	void AfficheVecteur();
-	
+	bool coincideValeur(Vecteur3D Vect);
+	bool coincideAdresse(Vecteur3D * Vect);
+	bool coincideReference(Vecteur3D &Vect);
+	static Vecteur3D normePlusGrandeValeur(Vecteur3D Vect1, Vecteur3D Vect2);
+	static Vecteur3D normePlusGrandeAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2);
+	static Vecteur3D normePlusGrandeReference(Vecteur3D &Vect1, Vecteur3D &Vect2);
 
 	///constructeurs
 	Vecteur3D();

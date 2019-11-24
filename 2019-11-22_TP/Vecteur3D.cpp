@@ -1,6 +1,7 @@
 #include "Vecteur3D.h"
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 ///Assesseurs
 float Vecteur3D::getX() {
@@ -40,6 +41,65 @@ void Vecteur3D::AfficheVecteur() {
 	std::cout << "Y: " << this->getY() << std::endl;
 	std::cout << "Z: " << this->getZ() << std::endl;
 };
+
+bool Vecteur3D::coincideValeur(Vecteur3D Vect) {
+	if (this->nX == Vect.nX && this->nY == Vect.nY && this->nZ == Vect.nZ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool Vecteur3D::coincideAdresse(Vecteur3D * Vect) {
+	if (this->nX == Vect->nX && this->nY == Vect->nY && this->nZ == Vect->nZ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool Vecteur3D::coincideReference(Vecteur3D &Vect) {
+	if (this->nX == Vect.nX && this->nY == Vect.nY && this->nZ == Vect.nZ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+Vecteur3D Vecteur3D::normePlusGrandeValeur(Vecteur3D Vect1, Vecteur3D Vect2)
+{
+	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
+		std::cout << "La norme du premier vecteur est plus grande." << std::endl;
+		return Vect1;
+	}
+	else {
+		std::cout << "La norme du second vecteur est plus grande." << std::endl;
+		return Vect2;
+	}
+}
+
+Vecteur3D Vecteur3D::normePlusGrandeAdresse(Vecteur3D * Vect1, Vecteur3D * Vect2)
+{
+	if (sqrt(Vect1->nX*Vect1->nX + Vect1->nY*Vect1->nY + Vect1->nZ*Vect1->nZ) > sqrt(Vect2->nX*Vect2->nX + Vect2->nY*Vect2->nY + Vect2->nZ*Vect2->nZ)) {
+		return *Vect1;
+	}
+	else {
+		return *Vect2;
+	}
+}
+
+Vecteur3D Vecteur3D::normePlusGrandeReference(Vecteur3D & Vect1, Vecteur3D & Vect2)
+{
+	if (sqrt(Vect1.nX*Vect1.nX + Vect1.nY*Vect1.nY + Vect1.nZ*Vect1.nZ) > sqrt(Vect2.nX*Vect2.nX + Vect2.nY*Vect2.nY + Vect2.nZ*Vect2.nZ)) {
+		return Vect1;
+	}
+	else {
+		return Vect2;
+	}
+}
 
 //Constructeurs
 Vecteur3D::Vecteur3D() {
